@@ -1,3 +1,4 @@
+import path from 'node:path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import svgLoader from 'vite-svg-loader';
@@ -8,4 +9,9 @@ export default defineConfig({
   build: { target: 'es2022' },
 
   plugins: [vue(), svgLoader()],
+  resolve: {
+    alias: {
+      '@': path.resolve('src'),
+    },
+  },
 });
