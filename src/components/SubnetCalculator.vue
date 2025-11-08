@@ -33,14 +33,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { subnetOptions } from '@/utils/subnetMasks.js';
 import { isIpValid, getNetworkAddress, getAddressesCount } from '@/utils/ipUtils.js';
 
 const ipInput = ref('');
 const selectedMask = ref(subnetOptions[24].mask); // по умолчанию /24
-const result = ref(null);
-
+const result = ref<{ network: string; hosts: number } | null>(null);
 const calculate = () => {
   if (!isIpValid(ipInput.value)) return;
 
@@ -58,7 +57,7 @@ const calculate = () => {
   padding: 1.5rem;
   background: var(--bg-color);
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .input-group {
