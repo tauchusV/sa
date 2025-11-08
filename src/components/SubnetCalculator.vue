@@ -55,7 +55,7 @@ const calculate = () => {
   max-width: 500px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background: var(--bg-color);
+  background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -86,7 +86,7 @@ const calculate = () => {
 .btn-calculate {
   width: 100%;
   padding: 0.75rem;
-  background: var(--primary-color);
+  background: var(--color-primary);
   color: white;
   border: none;
   border-radius: 4px;
