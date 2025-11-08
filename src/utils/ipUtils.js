@@ -3,6 +3,7 @@ export function isIpValid(ip) {
     /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.test(ip) &&
     ip.split('.').every((octet) => {
       const num = Number(octet);
+
       return num >= 0 && num <= 255;
     })
   );
@@ -22,6 +23,7 @@ export function getNetworkAddress(ip, mask) {
 
 export function getAddressesCount(mask) {
   let binaryMask = '';
+
   for (const octet of mask.split('.')) {
     binaryMask += Number(octet).toString(2).padStart(8, '0');
   }
